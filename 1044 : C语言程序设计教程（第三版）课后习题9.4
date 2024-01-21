@@ -1,0 +1,30 @@
+Description
+给年份year，定义一个宏，以判别该年份是否闰年。提示：宏名可以定义为LEAP_YEAR，形参为y，即定义宏的形式为 #define LEAP_YEAR(y) （读者设计的字符串）
+Input
+一个年份
+Output
+根据是否闰年输出，是输出"YES",否输出"NO"
+Sample Input
+2000
+Sample Output
+YES
+More Info
+#define LEAP_YEAR(y) ((y%4==0 && y%100!=0)||(y%400==0))?'YES':'NO'
+
+#include<stdio.h>
+#define IS_RUN(Y) ((Y%4==0&&Y%100!=0)||(Y%400==0))
+int main()
+{
+	int y,c;
+	scanf("%d",&y);
+	c = IS_RUN(y);
+	if (c == 1)
+	{
+		printf("YES");
+	}
+	else
+	{
+		printf("NO");
+	}
+	return 0;
+}
